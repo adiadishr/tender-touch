@@ -1,103 +1,174 @@
+import { ArrowRight, Search, Star, StarHalf } from "lucide-react";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { cn } from "@/lib/utils";
+import { navItems } from "@/constants/nav";
+import { MarqueeDemo } from "@/components/marquee";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  return (<>
+   
+    <div className="relative flex items-center justify-center h-screen">
+      <video
+        className="absolute inset-0 w-full h-full object-cover object-[0%_0%] -z-10"
+        src="/hero.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <div className="absolute inset-0 z-0 w-full h-full bg-black opacity-10" />
+      <div className="z-10 flex flex-col items-center justify-center text-white">
+        <div className="mb-2 text-xl tracking-tight">Meet Rascals</div>
+        <div className="mb-8 text-5xl tracking-tight">Ready for every mess!</div>
+        <div className="btn">Learn More <ArrowRight size={16} /></div>
+      </div>
     </div>
-  );
+    <div className="min-h-[calc(100dvh-110px)] pl-[5%] py-20">
+      <div className="mb-10 text-3xl tracking-tight text-cyan-950">Award-Winning Baby Products</div>
+      <Carousel className="w-full">
+        <CarouselContent>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <CarouselItem className={cn(index == 4 && "mr-[5%]", "flex flex-col basis-[40%]")} key={index}>
+              <div data-aos='fade-up' data-aos-delay={100 * index} className="relative mb-4 aspect-square">
+                <Image
+                  src='/hero.jpg'
+                  alt='product'
+                  fill
+                  className="object-cover rounded-md"
+                />
+              </div>
+              <div className="flex flex-col gap-2 mb-2 md:items-center md:flex-row">
+                <div className="flex gap-2">
+                  {Array.from({ length: 5 }).map((_, subIndex) => {
+                    return subIndex < 4 ? (
+                      <Star key={subIndex} size={13} className="text-yellow-500" fill="oklch(79.5% 0.184 86.047)" />
+                    ) : (
+                      <StarHalf key={subIndex} size={13} className="text-yellow-500" fill="oklch(79.5% 0.184 86.047)" />
+                    );
+                  })}
+                </div>
+                <div className="text-sm tracking-tight underline text-cyan-950">4.58/5 based on 17749 reviews</div>
+              </div>
+              <div data-aos='fade-up' data-aos-delay={150 * index} data-aos-offset='-50' className="-mb-1 text-2xl tracking-tight text-cyan-950">Premium Diapers</div>
+              <div data-aos='fade-up' data-aos-delay={175 * index} data-aos-offset='-50' className="mb-4 tracking-tight text-cyan-950">From $18.17</div>
+              <div data-aos='fade-up' data-aos-delay={200 * index} data-aos-offset='-50' className="btn">Learn More <ArrowRight size={16} /></div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="!top-0 !right-0 !left-auto !translate-y-0 !translate-x-0" />
+        <CarouselNext className="!top-0 !right-0 !left-auto !translate-y-0 !translate-x-0" />
+      </Carousel>
+    </div>
+    <div className="border-y border-neutral-200">
+      <div className="grid lg:grid-cols-2">
+        <div className="flex my-auto px-[10%] flex-col gap-6">
+          <div className="text-3xl tracking-tight text-cyan-950">Award Winning Diapers</div>
+          <p className="tracking-tight text-base/5 text-cyan-950">We get how important a good diaper is, and how disastrous a bad one can be.</p>
+          <p className="tracking-tight text-base/5 text-cyan-950">That’s why Rascals Premium Diapers are engineered with 6 Core Innovations to be ultra absorbent and gentle on sensitive skin, meaning you can worry less about the mess!</p>
+          <div className="btn">Shop for premium diapers<ArrowRight size={16} /></div>
+        </div>
+        <div className="relative h-[calc(100dvh-110px)] order-first lg:order-last">
+          <Image fill src="/hero.jpg" alt="hero" className="object-cover" />
+        </div>
+      </div>
+      <div className="grid lg:grid-cols-2">
+        <div className="flex my-auto px-[10%] flex-col gap-6">
+          <div className="text-3xl tracking-tight text-cyan-950">Ready to make change time easier?</div>
+          <p className="tracking-tight text-base/5 text-cyan-950">We get how important a good diaper is, and how disastrous a bad one can be.</p>
+          <p className="tracking-tight text-base/5 text-cyan-950">Engineered with 6 Core Innovations for a high-performing pant, Rascals CoComelon Training Pants will help to make change time easier.</p>
+          <div className="btn">Shop for premium diapers<ArrowRight size={16} /></div>
+        </div>
+        <div className="relative h-[calc(100dvh-110px)] order-first">
+          <Image fill src="/hero.jpg" alt="hero" className="object-cover" />
+        </div>
+      </div>
+      <div className="grid lg:grid-cols-2">
+        <div className="flex my-auto px-[10%]"></div>
+        <div className="relative h-[calc(100dvh-110px)] order-first lg:order-last">
+          <Image fill src="/hero.jpg" alt="hero" className="object-cover" />
+        </div>
+      </div>
+    </div>
+    <div className="min-h-[calc(100dvh-110px)] px-[10%] py-20">
+      <div className="max-w-lg mx-auto mb-4 tracking-tight text-center text-7xl/20 text-cyan-950">210,000 5-Star Reviews Globally</div>
+      <div className="mb-8 tracking-tight text-center text-cyan-950">Parents are happier with Rascals</div>
+      <div className="flex flex-wrap justify-center gap-4 mb-20">
+        <div className="btn">All Reviews<ArrowRight size={16} /></div>
+        <div className="btn !text-violet-400 !bg-transparent">Leave Your Own Review<ArrowRight size={16} /></div>
+      </div>
+      <MarqueeDemo />
+    </div>
+    <div className="text-white bg-cyan-950">
+      <div className="py-20">
+        <div className="mb-8 text-3xl tracking-tight text-center">Shop Rascals at Walmart</div>
+        <div className="flex items-center justify-center gap-4">
+          <div className="btn">Buy Online<ArrowRight size={16} /></div>
+          <div className="btn !border-white !bg-transparent">Find a Store Near You<ArrowRight size={16} /></div>
+        </div>
+      </div>
+      <div className="grid border-y border-cyan-50/20 md:grid-cols-2">
+        <div className="flex flex-col gap-6 md:py-20 px-[10%] pt-20 pb-10 md:border-r border-cyan-50/20">
+          <div className="text-sm md:w-3/4">Want Rascals updates, expert advice and giveaways sent straight to your inbox?</div>
+          <form className="relative flex border border-white rounded-md md:w-3/4 bg-white/10">
+            <input className="w-[85%] shrink-0 p-3.5 text-sm focus:outline-none placeholder:text-white" placeholder="Enter your email" />
+            <button type="submit" className="flex items-center justify-center w-full border-l border-white cursor-pointer">
+              <ArrowRight size={16} />
+            </button>
+          </form>
+          <div className="text-xs md:w-3/4">By signing up to receive emails from Rascals, you agree to our <Link href="/#" className="underline">Privacy Policy</Link>. We treat your info responsibly.</div>
+          <div className=""></div>
+        </div>
+        <div className="md:py-20 pb-10 px-[10%]">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex flex-col gap-4">
+              <div className="text-sm uppercase">Shop</div>
+              <Link className="text-sm hover:underline text-white/80" href="/all-products">All Products</Link>
+              <Link className="text-sm hover:underline text-white/80" href="/premium-diapers">Premium Diapers</Link>
+              <Link className="text-sm hover:underline text-white/80" href="/training-pants">Premium Training Pants</Link>
+              <Link className="text-sm hover:underline text-white/80" href="/sensitive-wipes">Premium Sensitive Wipes</Link>
+              <Link className="text-sm hover:underline text-white/80" href="/water-wipes">99% Water Premium Wipes</Link>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div className="text-sm uppercase">About</div>
+              <Link className="text-sm hover:underline text-white/80" href="/meet-rascals">Meet Rascals</Link>
+              <Link className="text-sm hover:underline text-white/80" href="/about">About Us</Link>
+              <Link className="text-sm hover:underline text-white/80" href="/reviews">Reviews</Link>
+              <Link className="text-sm hover:underline text-white/80" href="/blog">Blog</Link>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div className="text-sm uppercase">Social</div>
+              <Link className="text-sm hover:underline text-white/80" href="https://instagram.com" target="_blank">Instagram</Link>
+              <Link className="text-sm hover:underline text-white/80" href="https://tiktok.com" target="_blank">TikTok</Link>
+              <Link className="text-sm hover:underline text-white/80" href="https://facebook.com" target="_blank">Facebook</Link>
+              <Link className="text-sm hover:underline text-white/80" href="https://pinterest.com" target="_blank">Pinterest</Link>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div className="py-20 text-center text-7xl font-cursive">
+        Tender Touch
+      </div>
+      <div className="px-[5%] tracking-normal pb-4 w-full flex justify-between text-xs">
+        <div>
+          2024. All Rights Reserved. Rascals International Limited.
+        </div>
+        <div className="flex gap-4">
+          <Link href="/#" className="hover:underline">Privacy Policy</Link>
+          <Link href="/#" className="hover:underline">Terms of Service</Link>
+          <Link href="/#" className="hover:underline">Cookie Policy</Link>
+        </div>
+      </div>
+    </div>
+  </>)
 }
