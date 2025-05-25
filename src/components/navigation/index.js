@@ -4,8 +4,11 @@ import { navItems } from "@/constants/nav";
 import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
+import Link from "next/link";
 
 export default function Navigation() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -24,13 +27,13 @@ export default function Navigation() {
           <div className="text-3xl font-cursive -rotate-5 mr-20">Rascals</div>
           <div className="gap-8 md:flex hidden">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.title}
                 href={item.href}
-                className="tracking-tight"
+                className={cn("tracking-tight", pathname === item.href && "underline")}
               >
                 {item.title}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
