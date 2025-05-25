@@ -42,6 +42,7 @@ export default function Home() {
                   fill
                   className="object-cover rounded-md"
                 />
+                <div className="z-10 absolute bg-white/80 p-2 text-sm text-cyan-950 top-4 left-4 rounded-md">Up to 12 hours of leak protection</div>
               </div>
               <div className="flex flex-col gap-2 mb-2 md:items-center md:flex-row">
                 <div className="flex gap-2">

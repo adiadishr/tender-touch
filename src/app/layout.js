@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${sans.variable} ${pacifico.variable} ${giveYouGlory.variable} antialiased font-sans`}
+        className={`${sans.variable} ${pacifico.variable} ${giveYouGlory.variable} antialiased font-sans selection:bg-violet-400 selection:text-white`}
       >
         <Navigation />
         <UseLenis />
