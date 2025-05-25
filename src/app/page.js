@@ -8,13 +8,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils";
-import { navItems } from "@/constants/nav";
 import { MarqueeDemo } from "@/components/marquee";
 import Link from "next/link";
 
 export default function Home() {
   return (<>
-   
     <div className="relative flex items-center justify-center h-screen">
       <video
         className="absolute inset-0 w-full h-full object-cover object-[0%_0%] -z-10"
@@ -27,17 +25,17 @@ export default function Home() {
       <div className="absolute inset-0 z-0 w-full h-full bg-black opacity-10" />
       <div className="z-10 flex flex-col items-center justify-center text-white">
         <div className="mb-2 text-xl tracking-tight">Meet Rascals</div>
-        <div className="mb-8 text-5xl tracking-tight">Ready for every mess!</div>
+        <div className="mb-8 text-5xl tracking-tight text-center">Ready for every mess!</div>
         <div className="btn">Learn More <ArrowRight size={16} /></div>
       </div>
     </div>
-    <div className="min-h-[calc(100dvh-110px)] pl-[5%] py-20">
+    <div className="pl-[5%] py-20">
       <div className="mb-10 text-3xl tracking-tight text-cyan-950">Award-Winning Baby Products</div>
       <Carousel className="w-full">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem className={cn(index == 4 && "mr-[5%]", "flex flex-col basis-[40%]")} key={index}>
-              <div data-aos='fade-up' data-aos-delay={100 * index} className="relative mb-4 aspect-square">
+            <CarouselItem className={cn(index == 4 && "mr-[5%]", "flex flex-col basis-[75%] md:basis-[40%]")} key={index}>
+              <div data-aos='fade-up' data-aos-delay={100 * index} className="relative mb-4 aspect-square md:aspect-auto md:h-[20rem] lg:h-[28rem]">
                 <Image
                   src='/hero.jpg'
                   alt='product'
@@ -63,13 +61,12 @@ export default function Home() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="!top-0 !right-0 !left-auto !translate-y-0 !translate-x-0" />
-        <CarouselNext className="!top-0 !right-0 !left-auto !translate-y-0 !translate-x-0" />
+        <CarouselNext className="!top-1/2 !right-[2.5%] !left-auto !-translate-y-full !translate-x-0" />
       </Carousel>
     </div>
     <div className="border-y border-neutral-200">
       <div className="grid lg:grid-cols-2">
-        <div className="flex my-auto px-[10%] flex-col gap-6">
+        <div className="flex my-auto px-[10%] flex-col gap-6 md:py-0 py-20">
           <div className="text-3xl tracking-tight text-cyan-950">Award Winning Diapers</div>
           <p className="tracking-tight text-base/5 text-cyan-950">We get how important a good diaper is, and how disastrous a bad one can be.</p>
           <p className="tracking-tight text-base/5 text-cyan-950">That’s why Rascals Premium Diapers are engineered with 6 Core Innovations to be ultra absorbent and gentle on sensitive skin, meaning you can worry less about the mess!</p>
@@ -80,7 +77,7 @@ export default function Home() {
         </div>
       </div>
       <div className="grid lg:grid-cols-2">
-        <div className="flex my-auto px-[10%] flex-col gap-6">
+        <div className="flex my-auto px-[10%] flex-col gap-6 md:py-0 py-20">
           <div className="text-3xl tracking-tight text-cyan-950">Ready to make change time easier?</div>
           <p className="tracking-tight text-base/5 text-cyan-950">We get how important a good diaper is, and how disastrous a bad one can be.</p>
           <p className="tracking-tight text-base/5 text-cyan-950">Engineered with 6 Core Innovations for a high-performing pant, Rascals CoComelon Training Pants will help to make change time easier.</p>
@@ -97,8 +94,8 @@ export default function Home() {
         </div>
       </div>
     </div>
-    <div className="min-h-[calc(100dvh-110px)] px-[10%] py-20">
-      <div className="max-w-lg mx-auto mb-4 tracking-tight text-center text-7xl/20 text-cyan-950">210,000 5-Star Reviews Globally</div>
+    <div className="min-h-[calc(100dvh-110px)] px-[10%] py-40">
+      <div className="max-w-lg mx-auto mb-4 tracking-tight text-center text-5xl/16 md:text-7xl/20 text-cyan-950">210,000 5-Star Reviews Globally</div>
       <div className="mb-8 tracking-tight text-center text-cyan-950">Parents are happier with Rascals</div>
       <div className="flex flex-wrap justify-center gap-4 mb-20">
         <div className="btn">All Reviews<ArrowRight size={16} /></div>
@@ -156,10 +153,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="py-20 text-center text-7xl font-cursive">
+      <div className="py-20 text-center text-5xl lg:text-7xl font-cursive">
         Tender Touch
       </div>
-      <div className="px-[5%] tracking-normal pb-4 w-full flex justify-between text-xs">
+      <div className="px-[5%] tracking-normal pb-4 w-full flex flex-col items-center md:flex-row md:justify-between text-xs gap-2 md:gap-0">
         <div>
           2024. All Rights Reserved. Rascals International Limited.
         </div>

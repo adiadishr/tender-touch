@@ -22,7 +22,7 @@ export default function Navigation() {
       <div className={cn("h-[80px] px-[5%] flex items-center justify-between", scrolled ? "bg-white text-cyan-950" : "bg-transparent text-white duration-500")}>
         <div className="flex items-center">
           <div className="text-3xl font-cursive -rotate-5 mr-20">Rascals</div>
-          <div className="flex gap-8">
+          <div className="gap-8 md:flex hidden">
             {navItems.map((item) => (
               <a
                 key={item.title}
