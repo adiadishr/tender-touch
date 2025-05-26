@@ -14,7 +14,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > window.innerHeight * 0.5)
+      setScrolled(window.scrollY > window.innerHeight * 0.1)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -23,7 +23,7 @@ export default function Navigation() {
   return (
     <div className="fixed top-0 z-50 w-full">
       <div className="h-[30px] bg-cyan-950 text-xs justify-center tracking-tight w-full text-white flex items-center">New look, same Rascal + Friends, Meet Rascals</div>
-      <div className={cn("h-[80px] px-[5%] flex items-center justify-between duration-700", scrolled ? "bg-white text-cyan-950" : "bg-transparent text-white")}>
+      <div className={cn("h-[80px] px-[5%] flex items-center justify-between duration-300", scrolled ? "bg-white text-cyan-950" : "bg-transparent text-white")}>
         <div className="flex items-center">
           <div className="text-3xl font-cursive -rotate-5 lg:mr-20">Tender Touch</div>
           <div className="gap-8 lg:flex hidden">

@@ -154,4 +154,12 @@
   .btn {
     @apply flex gap-2 items-center px-4 py-2 w-max text-sm cursor-pointer tracking-tight text-white rounded-md bg-violet-400 border border-violet-400
   }
+
+  .contact-form input, .contact-form select, .contact-form textarea {
+    @apply text-sm border border-neutral-200 focus:border-violet-400 duration-200 rounded-md px-4 py-2 w-full mt-2
+  }
+
+  .contact-form label {
+    @apply text-sm
+  }
 }
