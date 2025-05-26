@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="grid border-y border-cyan-50/20 md:grid-cols-2">
-        <div className="flex flex-col gap-6 md:py-20 px-[10%] pt-20 pb-10 md:border-r border-cyan-50/20">
+        <div className="flex flex-col gap-6 md:py-20 px-[5%] md:px-[10%] pt-20 pb-10 md:border-r border-cyan-50/20">
           <div className="text-sm md:w-3/4">Want Rascals updates, expert advice and giveaways sent straight to your inbox?</div>
           <form className="relative flex border border-white rounded-md md:w-3/4 bg-white/10">
             <input className="w-[85%] shrink-0 p-3.5 text-sm focus:outline-none placeholder:text-white" placeholder="Enter your email" />
@@ -23,8 +23,8 @@ export default function Footer() {
           <div className="text-xs md:w-3/4">By signing up to receive emails from Rascals, you agree to our <Link href="/#" className="underline">Privacy Policy</Link>. We treat your info responsibly.</div>
           <div className=""></div>
         </div>
-        <div className="md:py-20 pb-10 px-[10%]">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="md:py-20 pb-10 px-[5%] md:px-[10%]">
+          <div className="grid grid-cols-2 gap-8 lg:grid-cols-3">
             <div className="flex flex-col gap-4">
               <div className="text-sm uppercase">Shop</div>
               <Link className="text-sm hover:underline text-white/80" href="/all-products">All Products</Link>

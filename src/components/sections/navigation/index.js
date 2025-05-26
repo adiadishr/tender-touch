@@ -26,12 +26,12 @@ export default function Navigation() {
       <div className={cn("h-[80px] px-[5%] flex items-center justify-between duration-300", scrolled ? "bg-white text-cyan-950" : "bg-transparent text-white")}>
         <div className="flex items-center">
           <div className="text-3xl font-cursive -rotate-5 lg:mr-20"><Link href="/">Tender Touch</Link></div>
-          <div className="gap-8 lg:flex hidden">
+          <div className="hidden gap-8 lg:flex">
             {navItems.map((item) => (
               <Link
                 key={item.title}
                 href={item.href}
-                className={cn("tracking-tight", pathname === item.href && "underline")}
+                className={cn("tracking-tight duration-0 hover:text-violet-400", pathname === item.href && "underline", pathname === item.href & scrolled && "underline text-violet-400")}
               >
                 {item.title}
               </Link>
