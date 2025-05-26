@@ -13,8 +13,8 @@ export default function Home() {
   return (<>
     <div className="relative flex items-center justify-center h-screen">
       <video
-        className="absolute inset-0 w-full h-full object-cover object-[0%_0%] -z-10"
-        src="/hero.mp4"
+        className="absolute inset-0 w-full h-full object-cover object-[0%_100%] -z-10"
+        src="/video.mp4"
         autoPlay
         muted
         loop
@@ -32,8 +32,8 @@ export default function Home() {
       <Carousel className="w-full">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem className={cn(index == 4 && "mr-[5%]", "flex flex-col basis-[75%] md:basis-[40%]")} key={index}>
-              <div data-aos='fade-up' data-aos-delay={100 * index} className="relative mb-4 aspect-square md:aspect-auto md:h-[20rem] lg:h-[28rem]">
+            <CarouselItem className={cn(index == 4 && "mr-[5%]", "flex flex-col basis-[75%] md:basis-[25%]")} key={index}>
+              <div data-aos='fade-up' data-aos-delay={100 * index} className="relative mb-4 h-73">
                 <Image
                   src='/hero.jpg'
                   alt='product'
@@ -52,7 +52,7 @@ export default function Home() {
                     );
                   })}
                 </div>
-                <div className="text-sm tracking-tight underline text-cyan-950">4.58/5 based on 17749 reviews</div>
+                {/* <div className="text-sm tracking-tight underline text-cyan-950">4.58/5 based on 17749 reviews</div> */}
               </div>
               <div data-aos='fade-up' data-aos-delay={150 * index} data-aos-offset='-50' className="-mb-1 text-2xl tracking-tight text-cyan-950">Premium Diapers</div>
               <div data-aos='fade-up' data-aos-delay={175 * index} data-aos-offset='-50' className="mb-4 tracking-tight text-cyan-950">From $18.17</div>

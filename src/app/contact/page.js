@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import AuxHero from "@/components/sections/aux-hero";
 
 export const metadata = {
   title: "Tender Touch | Contact Us",
@@ -13,11 +14,7 @@ export const metadata = {
 
 export default function Page() {
   return (<>
-    <div className="py-20 bg-cyan-600">
-      <div className="w-[90%] pt-20 mx-auto text-5xl tracking-tight text-center text-white">
-        Contact Us
-      </div>
-    </div>
+    <AuxHero title="Contact Us" />
     <div className="py-20 w-[90%] mx-auto border-b border-neutral-200 grid md:grid-cols-2 text-cyan-950">
       <div className="border-b pb-14 mb-10 md:pb-0 md:mb-0 md:border-b-0 md:border-r border-neutral-200 md:pr-[10%]">
         <div className="text-3xl tracking-tight mb-4">We&apos;re here to help</div>

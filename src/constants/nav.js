@@ -4,19 +4,11 @@ export const navItems = [
     href: "/",
   },
   {
-    title: "Products",
-    href: "/products",
-  },
-  {
-    title: "About Us",
-    href: "/about",
+    title: "Blogs",
+    href: "/blogs",
   },
   {
     title: "Contact",
     href: "/contact",
-  },
-  {
-    title: "Blog",
-    href: "/blog",
   },
 ];
