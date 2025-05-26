@@ -15,7 +15,7 @@ export default function Page() {
           <div className="text-lg">Wet Wipes</div>
         </div>
       </div>
-      <div className="col-span-1 md:col-span-3 h-[500dvh]">
+      <div className="col-span-1 md:col-span-3">
         <div className="mb-8 text-3xl">Award Winning Diapers</div>
         <div className="grid grid-cols-2 gap-x-8 gap-y-12">
           {Array.from({ length: 5 }).map((_, index) => (
