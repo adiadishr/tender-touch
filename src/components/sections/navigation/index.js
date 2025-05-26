@@ -25,7 +25,7 @@ export default function Navigation() {
       <div className="h-[30px] bg-cyan-950 text-xs justify-center tracking-tight w-full text-white flex items-center">New look, same Rascal + Friends, Meet Rascals</div>
       <div className={cn("h-[80px] px-[5%] flex items-center justify-between duration-300", scrolled ? "bg-white text-cyan-950" : "bg-transparent text-white")}>
         <div className="flex items-center">
-          <div className="text-3xl font-cursive -rotate-5 lg:mr-20">Tender Touch</div>
+          <div className="text-3xl font-cursive -rotate-5 lg:mr-20"><Link href="/">Tender Touch</Link></div>
           <div className="gap-8 lg:flex hidden">
             {navItems.map((item) => (
               <Link
