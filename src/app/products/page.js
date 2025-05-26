@@ -17,7 +17,7 @@ export default function Page() {
       </div>
       <div className="col-span-1 md:col-span-3">
         <div className="mb-8 text-3xl">Award Winning Diapers</div>
-        <div className="grid grid-cols-3 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
           {Array.from({ length: 5 }).map((_, index) => (
             <div className="flex flex-col" key={index}>
               <div className="relative mb-4 aspect-square">
