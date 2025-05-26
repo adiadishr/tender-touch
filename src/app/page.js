@@ -32,7 +32,7 @@ export default function Home() {
       <Carousel className="w-full">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem className={cn(index == 4 && "mr-[5%]", "flex flex-col basis-[75%] md:basis-[25%]")} key={index}>
+            <CarouselItem className={cn(index == 4 && "mr-[5%]", "flex flex-col basis-[75%] md:basis-[30%]")} key={index}>
               <div data-aos='fade-up' data-aos-delay={100 * index} className="relative mb-4 h-73">
                 <Image
                   src='/hero.jpg'
