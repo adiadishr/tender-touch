@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="py-20 text-center text-5xl lg:text-7xl font-cursive overflow-hidden !selection:bg-transparent cursor-default">
-        <div className="-rotate-5 w-max mx-auto cursor-default !selection:bg-transparent">Tender Touch</div>
+        <div className="-rotate-5 w-max mx-auto cursor-default !selection:bg-transparent"><Link href="/">Tender Touch</Link></div>
       </div>
       <div className="px-[5%] tracking-normal pb-4 w-full flex flex-col items-center md:flex-row md:justify-between text-xs gap-2 md:gap-0">
         <div>
