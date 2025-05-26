@@ -152,7 +152,7 @@
   }
 
   .btn {
-    @apply flex gap-2 items-center px-3 py-1.5 text-xs md:px-4 md:py-2 w-max md:text-sm cursor-pointer tracking-tight text-white rounded-md bg-violet-400 border border-violet-400
+    @apply flex gap-2 items-center text-xs px-4 py-2 w-max md:text-sm cursor-pointer tracking-tight text-white rounded-md bg-violet-400 border border-violet-400
   }
 
   .contact-form input, .contact-form select, .contact-form textarea {

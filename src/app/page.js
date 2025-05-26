@@ -90,7 +90,7 @@ export default function Home() {
           <p className="tracking-tight text-base/5 text-cyan-950">That&apos;s why Rascals Premium Diapers are engineered with 6 Core Innovations to be ultra absorbent and gentle on sensitive skin, meaning you can worry less about the mess!</p>
           <div className="btn">Shop for premium diapers<ArrowRight size={16} /></div>
         </div>
-        <div className="relative h-[calc(100dvh-110px)] order-first lg:order-last">
+        <div className="relative md:h-[calc(100dvh-110px)] h-80 order-first lg:order-last">
           <div className="absolute inset-0 z-0 w-full h-full bg-black opacity-10" />
           <Image fill src="/hero.jpg" alt="hero" className="object-cover -z-10" />
           <div className="absolute flex items-center gap-2 text-xs text-white rotate-90 md:text-sm -right-4 md:right-0 top-1/2">Scroll to see more<ArrowRight size={16} /></div>
@@ -103,7 +103,7 @@ export default function Home() {
           <p className="tracking-tight text-base/5 text-cyan-950">Engineered with 6 Core Innovations for a high-performing pant, Rascals CoComelon Training Pants will help to make change time easier.</p>
           <div className="btn">Shop for premium diapers<ArrowRight size={16} /></div>
         </div>
-        <div className="relative h-[calc(100dvh-110px)] order-first">
+        <div className="relative md:h-[calc(100dvh-110px)] h-80 order-first">
           <div className="absolute inset-0 z-0 w-full h-full bg-black opacity-10" />
           <Image fill src="/hero.jpg" alt="hero" className="object-cover -z-10" />
           <div className="absolute flex items-center gap-2 text-xs text-white rotate-90 md:text-sm -right-4 md:right-0 top-1/2">Scroll to see more<ArrowRight size={16} /></div>
@@ -116,7 +116,7 @@ export default function Home() {
           <p className="tracking-tight text-base/5 text-cyan-950">Engineered with 6 Core Innovations for a high-performing pant, Rascals CoComelon Training Pants will help to make change time easier.</p>
           <div className="btn">Shop for premium diapers<ArrowRight size={16} /></div>
         </div>
-        <div className="relative h-[calc(100dvh-110px)] order-first lg:order-last">
+        <div className="relative md:h-[calc(100dvh-110px)] h-80 order-first lg:order-last">
           <div className="absolute inset-0 z-0 w-full h-full bg-black opacity-10" />
           <Image fill src="/hero.jpg" alt="hero" className="object-cover -z-10" />
           <div className="absolute flex items-center gap-2 text-xs text-white rotate-90 md:text-sm -right-4 md:right-0 top-1/2">Scroll to see more<ArrowRight size={16} /></div>
@@ -124,7 +124,7 @@ export default function Home() {
       </div>
     </div>
     {/* Testimonials */}
-    <div className="min-h-[calc(100dvh-110px)] px-[10%] py-20 md:pt-40">
+    <div className="w-[90%] mx-auto py-20 md:pt-40">
       <div className="max-w-lg mx-auto mb-4 tracking-tight text-center text-5xl/16 md:text-7xl/20 text-cyan-950">210,000 5-Star Reviews Globally</div>
       <div className="mb-8 tracking-tight text-center text-cyan-950">Parents are happier with Rascals</div>
       <div className="flex flex-wrap justify-center gap-4 mb-20">
