@@ -14,7 +14,7 @@ import FAQ from "@/components/sections/faq";
 export default function Home() {
   return (<>
     {/* Hero */}
-    <div className="relative flex items-center justify-center h-screen">
+    <div className="relative flex items-center justify-center h-[calc(100dvh-30px)] mt-[30px]">
       <video
         className="absolute inset-0 w-full h-full object-cover object-[0%_100%] -z-10"
         src="/hero.mp4"
