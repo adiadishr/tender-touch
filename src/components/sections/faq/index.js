@@ -7,7 +7,7 @@ import {
 import { cn } from "@/lib/utils"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
-export default function FAQ({ className, page }) {
+export default function FAQ({ className, page, subsection }) {
   return (<>
     {/* FAQ */}
     <div className={cn("py-20 w-[90%] mx-auto text-cyan-950", className)}>

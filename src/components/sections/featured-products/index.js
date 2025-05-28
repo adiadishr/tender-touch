@@ -10,14 +10,14 @@ import Image from "next/image";
 import { useProducts } from "@/hooks/use-products";
 import Link from "next/link";
 
-export default function FeaturedProducts() {
+export default function FeaturedProducts({ inProductPage }) {
   const products = useProducts();
   return (
     <div>
-      <div className="mx-auto w-[90%] pt-20">
+      <div className={cn("mx-auto w-[90%] pt-20", inProductPage && "w-full")}>
         <div className="text-3xl tracking-tight text-cyan-950">Award-Winning Baby Products</div>
       </div>
-      <div className="pl-[5%] pb-20 pt-10">
+      <div className={cn("pl-[5%] pb-20 pt-10", inProductPage && "pl-0")}>
         <Carousel className="w-full">
           <CarouselContent>
             {products.map((product, index) => (

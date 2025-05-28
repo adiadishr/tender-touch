@@ -57,8 +57,8 @@ export default async function Page({ params }) {
       <div className="col-span-1 p-[5%] md:p-[10%]"></div>
     </div> */}
     {/* FAQs */}
-    <FAQ className="pt-10 pb-0" />
+    <FAQ className="w-full pt-10 pb-0" />
     {/* Other Featured Products */}
-    <FeaturedProducts />
+    <FeaturedProducts inProductPage />
   </>)
 }
