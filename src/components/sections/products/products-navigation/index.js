@@ -14,7 +14,7 @@ import { usePathname } from "next/navigation";
 export default function ProductNavigation() {
   const pathname = usePathname();
   return (<>
-    <div className="sticky top-[calc(110px+2.5rem)] flex flex-wrap md:flex-col gap-4">
+    <div className="md:sticky md:top-[calc(110px+2.5rem)] flex flex-col gap-4 w-full md:w-auto">
       <div className="text-sm text-neutral-600">Product Types</div>
       <Link href="/products" className={cn("text-base hover:underline duration-300 hover:text-cyan-900", pathname === "/products" && "text-violet-600 hover:text-violet-600")}>All Products</Link>
       <Accordion

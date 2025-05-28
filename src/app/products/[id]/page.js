@@ -19,15 +19,15 @@ export default async function Page({ params }) {
   const product = exists.subCategories?.find(sub => sub.id === id) || exists;
   return (<>
     {/* Main Product Screen */}
-    <div className="grid gap-8 pb-10 lg:grid-cols-12">
-      <div className="relative col-span-5">
-        <div className="sticky h-max top-30">
-          <div className="relative overflow-hidden rounded-md h-max aspect-square">
+    <div className="grid w-full grid-cols-1 gap-8 pb-10 lg:grid-cols-12">
+      <div className="relative col-span-1 lg:col-span-5">
+        <div className="lg:sticky lg:h-max lg:top-30">
+          <div className="relative overflow-hidden rounded-md lg:aspect-square">
             <Image fill src={product.src} alt="blog" className="object-cover duration-500 group-hover:scale-105" />
           </div>
         </div>
       </div>
-      <div className="relative flex flex-col col-span-7 gap-4">
+      <div className="relative flex flex-col col-span-1 gap-4 lg:col-span-7">
         <Link href="/products" className="absolute top-0 right-0 btn">Go back</Link>
         <div className="text-sm">{product.tagline}</div>
         <div className="text-3xl">{product.title}</div>
