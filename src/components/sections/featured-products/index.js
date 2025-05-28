@@ -17,7 +17,7 @@ export default function FeaturedProducts({ inProductPage }) {
       <div className={cn("mx-auto w-[90%] pt-20", inProductPage && "w-full")}>
         <div className="text-3xl tracking-tight text-cyan-950">Award-Winning Baby Products</div>
       </div>
-      <div className={cn("pl-[5%] pb-20 pt-10", inProductPage && "pl-0")}>
+      <div className={cn("pl-[5%] pb-20 pt-10", inProductPage && "pl-0 pb-0")}>
         <Carousel className="w-full">
           <CarouselContent>
             {products.map((product, index) => (
