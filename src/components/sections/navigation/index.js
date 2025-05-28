@@ -66,7 +66,7 @@ export default function Navigation() {
       <div className="h-[80px] mt-[30px] px-[5%] flex items-center justify-center duration-500 text-white">
         <div className="text-3xl font-cursive -rotate-5 w-max"><Link href="/">Tender Touch</Link></div>
         <div className="absolute flex items-center gap-4 right-[5%]">
-          <div className="flex items-center justify-center p-2 text-white rounded-full cursor-pointer md:hidden bg-violet-600">
+          <div className="flex items-center justify-center p-2 bg-white rounded-full cursor-pointer md:hidden text-violet-600">
             <X onClick={() => { setMobileNav(!mobileNav) }} size={20} />
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Navigation() {
             key={item.title}
             href={item.href}
             onClick={() => { setMobileNav(false) }}
-            className={cn("tracking-tight text-white text-3xl duration-0 hover:text-violet-600", pathname === item.href && "underline text-violet-600")}
+            className={cn("tracking-tight text-white text-3xl duration-300 hover:text-violet-400", isActive(item.href, pathname) && "underline text-violet-400")}
           >
             {item.title}
           </Link>
