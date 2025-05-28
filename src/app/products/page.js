@@ -1,15 +1,11 @@
 import { ArrowRight, Star, StarHalf } from "lucide-react";
 import Image from "next/image";
-import { products as data } from "@/constants/products";
+import { useProducts } from "@/hooks/use-products";
 import Link from "next/link";
 
 export default function Page() {
 
-  const products = data.flatMap(item =>
-    item.subCategories?.length
-      ? item.subCategories.map(sub => ({ ...sub }))
-      : [{ ...item }]
-  );
+  const products = useProducts();
 
   return (<>
     <div className="mb-8 text-3xl">Award Winning Diapers</div>

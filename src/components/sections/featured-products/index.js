@@ -5,11 +5,13 @@ import {
   CarouselItem,
   CarouselNext,
 } from "@/components/ui/carousel";
-import { featured_products } from "@/constants/featured-products";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useProducts } from "@/hooks/use-products";
+import Link from "next/link";
 
 export default function FeaturedProducts() {
+  const products = useProducts();
   return (
     <div>
       <div className="mx-auto w-[90%] pt-20">
@@ -18,7 +20,7 @@ export default function FeaturedProducts() {
       <div className="pl-[5%] pb-20 pt-10">
         <Carousel className="w-full">
           <CarouselContent>
-            {featured_products.map((product, index) => (
+            {products.map((product, index) => (
               <CarouselItem className={cn(index == 4 && "mr-[5%]", "flex flex-col basis-[70%] sm:basis-[35%]")} key={index}>
                 <div data-aos='fade-up' data-aos-delay={100 * index} className="relative mb-4 aspect-square">
                   <Image
@@ -39,11 +41,11 @@ export default function FeaturedProducts() {
                       );
                     })}
                   </div>
-                  {/* <div className="text-sm tracking-tight underline text-cyan-950">4.58/5 based on 17749 reviews</div> */}
+                  <div className="text-sm tracking-tight underline text-cyan-950">4.58/5 based on 17749 reviews</div>
                 </div>
-                <div data-aos='fade-up' data-aos-delay={150 * index} data-aos-offset='-50' className="-mb-1 text-2xl tracking-tight text-cyan-950">{product.name}</div>
-                <div data-aos='fade-up' data-aos-delay={175 * index} data-aos-offset='-50' className="mb-4 tracking-tight text-cyan-950">${product.price}</div>
-                <div data-aos='fade-up' data-aos-delay={200 * index} data-aos-offset='-50' className="btn">Learn More <ArrowRight size={16} /></div>
+                <div data-aos='fade-up' data-aos-delay={150 * index} data-aos-offset='-50' className="-mb-1 text-2xl tracking-tight text-cyan-950">{product.title}</div>
+                <div data-aos='fade-up' data-aos-delay={175 * index} data-aos-offset='-50' className="mb-4 tracking-tight text-cyan-950">From ${product.price}</div>
+                <Link href={`/products/${product.id}`} data-aos='fade-up' data-aos-delay={200 * index} data-aos-offset='-50' className="btn">Learn More <ArrowRight size={16} /></Link>
               </CarouselItem>
             ))}
           </CarouselContent>
