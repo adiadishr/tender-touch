@@ -21,9 +21,9 @@ export default function Home() {
       />
       <div className="absolute inset-0 z-0 w-full h-full bg-black opacity-10" />
       <div className="z-10 flex flex-col items-center justify-center text-white translate-y-[65%] md:translate-y-1/2">
-        <div className="mb-2 text-xl tracking-tight">Meet Rascals</div>
-        <div className="mb-8 text-5xl tracking-tight text-center">Ready for every mess!</div>
-        <div className="btn">Learn More <ArrowRight size={16} /></div>
+        <div className="mb-2 text-xl italic tracking-tight font-cursive">Tender Touch</div>
+        <div className="mb-8 text-5xl tracking-tight text-center">Gentle Care for Every Moment!</div>
+        <Link href="/products" className="btn">Shop Now!</Link>
       </div>
       <div className="absolute flex items-center gap-2 text-xs text-white rotate-90 md:text-sm -right-8 md:right-0 top-1/2">Scroll to see more<ArrowRight size={16} /></div>
     </div>
