@@ -11,7 +11,7 @@ export default function Page() {
     <div className="mb-8 text-3xl">Award Winning Diapers</div>
     <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
       {products.map((product, index) => (
-        <div className="flex flex-col" key={index}>
+        <Link href={`/products/${product.id}`} className="flex flex-col" key={index}>
           <div className="relative mb-4 overflow-hidden rounded-md h-max aspect-square group">
             <Image
               src={product.src}
@@ -35,8 +35,8 @@ export default function Page() {
           </div>
           <div className="-mb-1 text-2xl tracking-tight text-cyan-950">{product.title}</div>
           <div className="mb-4 tracking-tight text-cyan-950">From ${product.price}</div>
-          <Link href={`/products/${product.id}`} className="btn">Learn More <ArrowRight size={16} /></Link>
-        </div>
+          <div className="btn">Learn More <ArrowRight size={16} /></div>
+        </Link>
       ))}
     </div>
   </>)
