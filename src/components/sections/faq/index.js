@@ -11,7 +11,7 @@ export default function FAQ({ className, page }) {
   return (<>
     {/* FAQ */}
     <div className={cn("py-20 w-[90%] mx-auto text-cyan-950", className)}>
-      <div className="mb-8 text-3xl tracking-tight text-center">Frequently Asked Questions</div>
+      <div className="mb-8 text-3xl tracking-tight text-start md:text-center">Frequently Asked Questions</div>
       <Accordion type="multiple" collapsible="true" defaultValue={page && ["item-1", "item-2", "item-3"] || null} className="w-full md:w-[90%] mx-auto mb-8">
         <AccordionItem value="item-1">
           <AccordionTrigger className="cursor-pointer text-lg/6">What diaper size is right for my baby?</AccordionTrigger>
