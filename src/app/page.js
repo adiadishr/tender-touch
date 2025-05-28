@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 import { MarqueeDemo } from "@/components/sections/marquee";
 import Link from "next/link";
 import FAQ from "@/components/sections/faq";
+import { featured_products } from "@/constants/featured-products";
+import FeaturedProducts from "@/components/sections/featured-products";
 
 export default function Home() {
   return (<>
@@ -24,7 +26,7 @@ export default function Home() {
         playsInline
       />
       <div className="absolute inset-0 z-0 w-full h-full bg-black opacity-10" />
-      <div className="z-10 flex flex-col items-center justify-center text-white translate-y-[85%] md:translate-y-1/2">
+      <div className="z-10 flex flex-col items-center justify-center text-white translate-y-[65%] md:translate-y-1/2">
         <div className="mb-2 text-xl tracking-tight">Meet Rascals</div>
         <div className="mb-8 text-5xl tracking-tight text-center">Ready for every mess!</div>
         <div className="btn">Learn More <ArrowRight size={16} /></div>
@@ -32,53 +34,14 @@ export default function Home() {
       <div className="absolute flex items-center gap-2 text-xs text-white rotate-90 md:text-sm -right-8 md:right-0 top-1/2">Scroll to see more<ArrowRight size={16} /></div>
     </div>
     {/* Featured Products */}
-    <div>
-      <div className="mx-auto w-[90%] pt-20">
-        <div className="text-3xl tracking-tight text-cyan-950">Award-Winning Baby Products</div>
-      </div>
-      <div className="pl-[5%] pb-20 pt-10">
-        <Carousel className="w-full">
-          <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem className={cn(index == 4 && "mr-[5%]", "flex flex-col basis-[70%] sm:basis-[40%]")} key={index}>
-                <div data-aos='fade-up' data-aos-delay={100 * index} className="relative mb-4 aspect-square">
-                  <Image
-                    src='/hero.jpg'
-                    alt='product'
-                    fill
-                    className="object-cover rounded-md"
-                  />
-                  <div className="absolute z-10 p-2 text-sm rounded-md bg-white/80 text-cyan-950 top-4 left-4">Up to 12 hours of leak protection</div>
-                </div>
-                <div className="flex flex-col gap-2 mb-2 md:items-center md:flex-row">
-                  <div className="flex gap-2">
-                    {Array.from({ length: 5 }).map((_, subIndex) => {
-                      return subIndex < 4 ? (
-                        <Star key={subIndex} size={13} className="text-yellow-500" fill="oklch(79.5% 0.184 86.047)" />
-                      ) : (
-                        <StarHalf key={subIndex} size={13} className="text-yellow-500" fill="oklch(79.5% 0.184 86.047)" />
-                      );
-                    })}
-                  </div>
-                  {/* <div className="text-sm tracking-tight underline text-cyan-950">4.58/5 based on 17749 reviews</div> */}
-                </div>
-                <div data-aos='fade-up' data-aos-delay={150 * index} data-aos-offset='-50' className="-mb-1 text-2xl tracking-tight text-cyan-950">Premium Diapers</div>
-                <div data-aos='fade-up' data-aos-delay={175 * index} data-aos-offset='-50' className="mb-4 tracking-tight text-cyan-950">From $18.17</div>
-                <div data-aos='fade-up' data-aos-delay={200 * index} data-aos-offset='-50' className="btn">Learn More <ArrowRight size={16} /></div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselNext className="!top-1/2 !right-[2.5%] !left-auto !-translate-y-full !translate-x-0" />
-        </Carousel>
-      </div>
-    </div>
+    <FeaturedProducts />
     {/* Collections */}
     <div className="mx-auto w-[90%] pt-10 pb-20 md:pt-20 md:pb-10 relative z-10 text-cyan-950">
       <div className="mb-4 text-3xl tracking-tight text-center md:text-left">Our Collections</div>
       <div className="max-w-lg mx-auto mb-6 tracking-tight text-center text-base/6 md:text-left md:mx-0">We offer a complete range of hygiene and care products, designed to deliver comfort, protection, and care for your every need.</div>
       <div className="flex items-center justify-center w-full gap-4 md:justify-start">
         <Link href="/products" className="btn">View All Products<ArrowRight size={16} /></Link>
-        <div className="bg-transparent btn border-violet-400 text-violet-400">Scroll to see more<ArrowDown size={16} /></div>
+        <div className="bg-transparent btn border-violet-600 text-violet-600">Scroll to see more<ArrowDown size={16} /></div>
       </div>
     </div>
     {/* Grid */}
@@ -129,7 +92,7 @@ export default function Home() {
       <div className="mb-8 tracking-tight text-center text-cyan-950">Parents are happier with Rascals</div>
       <div className="flex flex-wrap justify-center gap-4 mb-20">
         <div className="btn">All Reviews<ArrowRight size={16} /></div>
-        <div className="btn !text-violet-400 !bg-transparent">Leave Your Own Review<ArrowRight size={16} /></div>
+        <div className="btn !text-violet-600 !bg-transparent">Leave Your Own Review<ArrowRight size={16} /></div>
       </div>
       <MarqueeDemo />
     </div>

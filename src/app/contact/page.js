@@ -14,7 +14,7 @@ export default function Page() {
       <div className="border-b pb-14 mb-10 md:pb-0 md:mb-0 md:border-b-0 md:border-r border-neutral-200 md:pr-[10%]">
         <div className="mb-4 text-3xl tracking-tight">We&apos;re here to help</div>
         <div className="mb-8 tracking-tight text-base/6">
-          If you weren&apos;t able to find the answer in our <Link className="inline underline text-violet-400" href="/#">FAQs</Link>, fill out this form with your details and tell us how we can help. Our friendly Customer Love team will be in touch shortly!
+          If you weren&apos;t able to find the answer in our <Link className="inline underline text-violet-600" href="/#">FAQs</Link>, fill out this form with your details and tell us how we can help. Our friendly Customer Love team will be in touch shortly!
         </div>
         <div className="relative w-full h-64 md:h-80 -z-10">
           <iframe

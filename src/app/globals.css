@@ -1,18 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@font-face {
-  font-family: 'MainFont';
-  src: url('/fonts/main-font.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'MainFont', sans-serif;
+  --font-sans: var(--font-rascals), sans-serif;
   --font-cursive: var(--font-pacifico);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -152,11 +144,11 @@
   }
 
   .btn {
-    @apply flex gap-2 items-center text-xs px-4 py-2 w-max md:text-sm cursor-pointer tracking-tight text-white rounded-md bg-violet-400 border border-violet-400
+    @apply flex gap-2 items-center text-xs px-4 py-2 w-max md:text-sm cursor-pointer tracking-tight text-white rounded-md bg-violet-600 border border-violet-600 hover:bg-violet-500 hover:border-violet-500 duration-300
   }
 
   .contact-form input, .contact-form select, .contact-form textarea {
-    @apply text-sm border border-neutral-200 focus:border-violet-400 duration-200 rounded-md px-4 py-2 w-full mt-2
+    @apply text-sm border border-neutral-200 focus:border-violet-600 duration-200 rounded-md px-4 py-2 w-full mt-2
   }
 
   .contact-form label {

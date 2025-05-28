@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className="text-white bg-cyan-950">
       <div className="py-20">
-        <div className="mb-8 text-3xl tracking-tight text-center">Shop Rascals at Walmart</div>
+        <div className="mb-8 text-3xl tracking-tight text-center">Find us at Stores <br /> or Shop Online </div>
         <div className="flex items-center justify-center gap-4">
           <div className="btn">Buy Online<ArrowRight size={16} /></div>
           <div className="btn !border-white !bg-transparent">Find a Store Near You<ArrowRight size={16} /></div>
