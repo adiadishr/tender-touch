@@ -19,10 +19,10 @@ export default async function Page({ params }) {
   const product = exists.subCategories?.find(sub => sub.id === id) || exists;
   return (<>
     {/* Main Product Screen */}
-    <div className="grid w-full grid-cols-1 gap-8 pb-10 lg:grid-cols-12">
+    <div className="grid w-full grid-cols-1 gap-10 pb-10 lg:grid-cols-12">
       <div className="relative col-span-1 lg:col-span-5">
         <div className="lg:sticky lg:h-max lg:top-30">
-          <div className="relative overflow-hidden rounded-md lg:aspect-square">
+          <div className="relative overflow-hidden rounded-md h-96 lg:h-auto lg:aspect-square">
             <Image fill src={product.src} alt="blog" className="object-cover duration-500 group-hover:scale-105" />
           </div>
         </div>
