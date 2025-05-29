@@ -7,11 +7,10 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useProducts } from "@/hooks/use-products";
 import Link from "next/link";
+import { products } from "@/constants/products";
 
 export default function FeaturedProducts({ inProductPage }) {
-  const products = useProducts();
   return (
     <div>
       <div className={cn("mx-auto w-[90%] pt-20", inProductPage && "w-full")}>

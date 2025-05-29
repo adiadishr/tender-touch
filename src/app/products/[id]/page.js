@@ -9,14 +9,10 @@ import { notFound } from "next/navigation";
 
 export default async function Page({ params }) {
   const { id } = await params
-  const exists = products.find(item =>
-    item.id === id ||
-    item.subCategories?.find(sub => sub.id === id)
-  );
-  if (!exists) {
+  const product = products.find(item => item.id === id);
+  if (!product) {
     notFound()
   }
-  const product = exists.subCategories?.find(sub => sub.id === id) || exists;
   return (<>
     {/* Main Product Screen */}
     <div className="grid w-full grid-cols-1 gap-10 pb-10 lg:grid-cols-12">
@@ -34,13 +30,12 @@ export default async function Page({ params }) {
         <div className="text-lg">Starting from ${product.price}</div>
         <div className="flex flex-col gap-2 md:items-center md:flex-row">
           <div className="flex gap-2">
-            {Array.from({ length: 5 }).map((_, subIndex) => {
-              return subIndex < 4 ? (
-                <Star key={subIndex} size={13} className="text-yellow-500" fill="oklch(79.5% 0.184 86.047)" />
-              ) : (
-                <StarHalf key={subIndex} size={13} className="text-yellow-500" fill="oklch(79.5% 0.184 86.047)" />
-              );
-            })}
+            {[1, 1, 1, 1, 0.5].map((val, i) =>
+              val === 1
+                ? <Star key={i} size={13} className="text-yellow-500" fill="oklch(79.5% 0.184 86.047)" />
+                : <StarHalf key={i} size={13} className="text-yellow-500" fill="oklch(79.5% 0.184 86.047)" />
+            )}
+
           </div>
           <div className="text-sm tracking-tight underline text-cyan-950">4.58/5 based on 17749 reviews</div>
         </div>
@@ -50,12 +45,6 @@ export default async function Page({ params }) {
         <ProductForm product={product} />
       </div>
     </div>
-    {/* <div className="grid border-y border-neutral-200 md:grid-cols-2">
-      <div className="col-span-1 md:h-[calc(100dvh-110px)] relative overflow-hidden rounded-md">
-        <Image fill src="/product-marketing.jpeg" alt="blog" className="object-cover duration-500 group-hover:scale-105" />
-      </div>
-      <div className="col-span-1 p-[5%] md:p-[10%]"></div>
-    </div> */}
     {/* FAQs */}
     <FAQ className="w-full pt-10 pb-0" />
     {/* Other Featured Products */}

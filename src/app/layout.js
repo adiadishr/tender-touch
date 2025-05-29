@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${pacifico.variable} ${rascals.variable} antialiased font-sans selection:bg-violet-600 selection:text-white`}
+        className={`${pacifico.variable} ${rascals.variable} antialiased font-sans selection:bg-violet-500 selection:text-white`}
       >
         <Navigation />
         <UseLenis />

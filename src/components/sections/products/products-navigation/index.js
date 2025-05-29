@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { products } from "@/constants/products";
+import { data } from "@/constants/products";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -20,16 +20,16 @@ export default function ProductNavigation() {
       <Accordion
         type="multiple"
         collapsible="true"
-        defaultValue={products.map(cat => cat.id)}
+        defaultValue={data.map(cat => cat.id)}
         className="w-full"
       >
-        {products.map((category, idx) => (
-          <AccordionItem key={idx} className="pt-0 pb-4 border-0" value={category.id}>
-            {category.accordian ? (
+        {data.map((data, idx) => (
+          <AccordionItem key={idx} className="pt-0 pb-4 border-0" value={data.id}>
+            {data.accordian ? (
               <>
-                <AccordionTrigger className="py-0 text-base">{category.title}</AccordionTrigger>
+                <AccordionTrigger className="py-0 text-base">{data.title}</AccordionTrigger>
                 <AccordionContent className="flex flex-col pb-0">
-                  {category.subCategories?.map((sub, subIdx) => (
+                  {data.subCategories?.map((sub, subIdx) => (
                     <Link href={`/products/${sub.id}`} key={subIdx} className={cn("pb-2 duration-300 hover:text-cyan-900 text-base pl-4 first:pt-4 hover:underline last:pb-0", pathname === `/products/${sub.id}` && "text-violet-600 hover:text-violet-600")}>
                       {sub.title}
                     </Link>
@@ -37,7 +37,7 @@ export default function ProductNavigation() {
                 </AccordionContent>
               </>
             ) : (
-              <Link href={`/products/${category.id}`} className={cn("text-base hover:underline duration-300 hover:text-cyan-900", pathname === `/products/${category.id}` && "text-violet-600 hover:text-violet-600")}>{category.title}</Link>
+              <Link href={`/products/${data.id}`} className={cn("text-base hover:underline duration-300 hover:text-cyan-900", pathname === `/products/${data.id}` && "text-violet-600 hover:text-violet-600")}>{data.title}</Link>
             )}
           </AccordionItem>
         ))}

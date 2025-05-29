@@ -3,11 +3,10 @@ import { MarqueeDemo } from "@/components/sections/marquee";
 import Link from "next/link";
 import FAQ from "@/components/sections/faq";
 import FeaturedProducts from "@/components/sections/featured-products";
-import { useProducts } from "@/hooks/use-products";
 import LandingGridItem from "@/components/sections/landing/landing-grid-item";
+import { products } from "@/constants/products";
 
 export default function Home() {
-  const products = useProducts();
   return (<>
     {/* Hero */}
     <div className="relative flex items-center justify-center h-[calc(100dvh-30px)] mt-[30px]">

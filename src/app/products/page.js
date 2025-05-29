@@ -1,12 +1,9 @@
+import { products } from "@/constants/products";
 import { ArrowRight, Star, StarHalf } from "lucide-react";
 import Image from "next/image";
-import { useProducts } from "@/hooks/use-products";
 import Link from "next/link";
 
 export default function Page() {
-
-  const products = useProducts();
-
   return (<>
     <div className="mb-8 text-3xl">Award Winning Diapers</div>
     <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
