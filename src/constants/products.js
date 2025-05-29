@@ -1,4 +1,4 @@
-export const products = [
+export const data = [
   // Diapers
   {
     title: "Diapers",
@@ -52,3 +52,9 @@ export const products = [
     featured: true,
   },
 ]
+
+export const products = data.flatMap(item =>
+  item.subCategories?.length
+    ? item.subCategories.map(sub => ({ ...sub }))
+    : [{ ...item }]
+);
