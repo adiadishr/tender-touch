@@ -9,20 +9,14 @@ export function getLenis() {
   return lenisInstance
 }
 
-
 export function UseLenis() {
+
   useEffect(() => {
     const lenis = new Lenis({
       autoRaf: true,
     });
+
     lenisInstance = lenis
-
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
 
     return () => {
       lenisInstance = null
