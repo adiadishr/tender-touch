@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { useCartStore } from "@/stores/cartStore";
 import { ChevronRight, ShoppingBasket, X } from "lucide-react";
-import Image from "next/image";
+import { getLenis } from "@/lib/lenis"
 import { useEffect, useState } from "react"
 import CartProductCard from "./cart-product-card";
 
@@ -36,6 +36,21 @@ export default function Cart({ scrolled }) {
   useEffect(() => {
     if (visible) document.body.style.overflow = "hidden"
     else document.body.style.overflow = ""
+  }, [visible])
+
+  useEffect(() => {
+    const lenis = getLenis()
+    if (!lenis) return
+
+    if (visible) {
+      lenis.stop()
+    } else {
+      lenis.start()
+    }
+
+    return () => {
+      lenis.start() // fallback just in case
+    }
   }, [visible])
 
   const totalUniqueItems = useCartStore((state) => state.getTotalUniqueItems());
