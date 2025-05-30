@@ -3,7 +3,9 @@
 import { cn } from "@/lib/utils";
 import { useCartStore } from "@/stores/cartStore";
 import { ChevronRight, ShoppingBasket, X } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react"
+import CartProductCard from "./cart-product-card";
 
 export default function Cart({ scrolled }) {
 
@@ -22,6 +24,19 @@ export default function Cart({ scrolled }) {
   useEffect(() => {
     setCartUI(prev => ({ ...prev, mounted: true }));
   }, [])
+
+  useEffect(() => {
+    function handleKey(e) {
+      if (e.key === 'Escape') toggleVisible()
+    }
+    if (visible) window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [visible])
+
+  useEffect(() => {
+    if (visible) document.body.style.overflow = "hidden"
+    else document.body.style.overflow = ""
+  }, [visible])
 
   const totalUniqueItems = useCartStore((state) => state.getTotalUniqueItems());
   const totalPrice = useCartStore((state) => state.getTotalPrice());
@@ -52,10 +67,16 @@ export default function Cart({ scrolled }) {
       <div className=""></div>
       <div className="flex items-center">View Cart <ChevronRight size={16} /></div>
     </div>
-    {/* Cart UI */}
-    <div className={cn("fixed -z-[100] h-[100dvh] white duration-500 w-full inset-0 bg-black/50 opacity-0 invisible", visible && "z-[100] opacity-100 visible")}>
-      <div className="absolute right-0 top-0 z-[500] bg-white w-full md:w-1/3 h-[100dvh]">
-        <X onClick={toggleVisible} className="absolute cursor-pointer text-cyan-950 top-4 right-4" size={20} />
+    {/*   Black Backdrop   */}
+    <div onClick={toggleVisible} className={cn("fixed h-[100dvh] duration-500 w-full inset-0 bg-black/50 opacity-0 invisible", visible && "z-[100] opacity-100 visible backdrop-blur")} />
+    {/*   List   */}
+    <div className={cn("fixed z-[-500] w-full md:w-6/10 lg:w-4/11 duration-1000 ease-quart-out overflow-hidden opacity-0 top-full right-0 md:top-0 md:-right-full", visible && "z-[500] opacity-100 top-10 right-0 md:right-0 md:top-0 flex flex-col duration-500")}>
+      <div className="py-4 px-[5%] justify-between rounded-t-xl md:rounded-none bg-white text-cyan-950 w-full flex items-center">
+        <div className="text-xl">My Cart</div>
+        <X onClick={toggleVisible} className="cursor-pointer" size={20} />
+      </div>
+      <div className="w-full h-[calc(100dvh-100px)] md:h-[calc(100dvh-60px)] overflow-y-scroll p-4 bg-neutral-100">
+        <CartProductCard />
       </div>
     </div>
   </>)
