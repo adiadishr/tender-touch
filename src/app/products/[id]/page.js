@@ -7,6 +7,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({ params }) {
+  const { id } = await params
+  const product = products.find(item => item.id === id);
+
+  if (!product) {
+    return {
+      title: "Product Not Found - Tender Touch",
+      description: "Sorry, we couldn't find this product.",
+    };
+  }
+
+  return {
+    title: `Tender Touch - ${product.title} `,
+    description: `Buy ${product.title} sanitary pads for comfort and hygiene. Only ₹${product.price}.`,
+    openGraph: {
+      title: `${product.title} - Tender Touch`,
+      description: `Buy ${product.title} sanitary pads for comfort and hygiene.`,
+      images: [product.src],
+    },
+  };
+}
+
 export default async function Page({ params }) {
   const { id } = await params
   const product = products.find(item => item.id === id);
@@ -27,7 +49,7 @@ export default async function Page({ params }) {
         <Link href="/products" className="absolute top-0 right-0 btn">Go back</Link>
         <div className="text-sm">{product.tagline}</div>
         <div className="text-3xl">{product.title}</div>
-        <div className="text-lg">Starting from ${product.price}</div>
+        <div className="text-lg">Starting from ₹{product.price[0]}</div>
         <div className="flex flex-col gap-2 md:items-center md:flex-row">
           <div className="flex gap-2">
             {[1, 1, 1, 1, 0.5].map((val, i) =>

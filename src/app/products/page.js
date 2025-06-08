@@ -31,7 +31,7 @@ export default function Page() {
             <div className="text-sm tracking-tight underline text-cyan-950">4.58/5 based on 17749 reviews</div>
           </div>
           <div className="-mb-1 text-2xl tracking-tight text-cyan-950">{product.title}</div>
-          <div className="mb-4 tracking-tight text-cyan-950">From ${product.price}</div>
+          <div className="mb-4 tracking-tight text-cyan-950">From ₹{product.price[0]}</div>
           <div className="btn">Learn More <ArrowRight size={16} /></div>
         </Link>
       ))}

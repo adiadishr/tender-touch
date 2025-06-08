@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from "next/link";
-import Cart from "@/components/cart";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -34,27 +33,24 @@ export default function Navigation() {
         Get 15% off when you order online! <span className="ml-2 underline text-violet-400 hover:text-violet-300">Shop now!</span>
       </div>
       <div className={cn("h-[80px] px-[5%] flex items-center justify-center md:justify-between duration-300", scrolled ? "bg-white text-cyan-950" : "bg-transparent text-white")}>
-        <div className="flex items-center">
-          <div className="text-3xl font-cursive -rotate-5 lg:mr-20"><Link href="/">Tender Touch</Link></div>
-          <div className="hidden gap-8 lg:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className={cn(
-                  "tracking-tight duration-0",
-                  isActive(item.href, pathname) && "underline",
-                  isActive(item.href, pathname) && scrolled && "text-violet-600 hover:text-violet-500",
-                  scrolled ? "hover:text-violet-600" : "hover:underline"
-                )}
-              >
-                {item.title}
-              </Link>
-            ))}
-          </div>
+        <div className="text-3xl font-cursive -rotate-5 lg:mr-20"><Link href="/">Tender Touch</Link></div>
+        <div className="hidden gap-8 lg:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className={cn(
+                "tracking-tight duration-0",
+                isActive(item.href, pathname) && "underline",
+                isActive(item.href, pathname) && scrolled && "text-violet-600 hover:text-violet-500",
+                scrolled ? "hover:text-violet-600" : "hover:underline"
+              )}
+            >
+              {item.title}
+            </Link>
+          ))}
         </div>
         <div className="absolute flex items-center gap-4 right-[5%]">
-          <Cart scrolled={scrolled} />
           <div className="flex items-center justify-center p-2 text-white rounded-full cursor-pointer md:hidden bg-violet-600">
             <Menu onClick={() => { setMobileNav(!mobileNav) }} size={20} />
           </div>

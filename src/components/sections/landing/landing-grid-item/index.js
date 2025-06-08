@@ -13,9 +13,9 @@ export default function LandingGridItem({ product, index }) {
         "flex my-auto px-[5%] md:px-[10%] flex-col gap-6 md:py-0 py-20",
         isOdd && "lg:order-last"
       )}>
-        <div className="text-3xl tracking-tight text-cyan-950">{product.title}</div>
-        <p className="tracking-tight text-base/5 text-cyan-950">{product.tagline}</p>
-        <p className="tracking-tight text-base/5 text-cyan-950">{product.desc}</p>
+        <div className="text-3xl tracking-tight">{product.title}</div>
+        <p className="tracking-tight text-base/5">{product.tagline}</p>
+        <p className="tracking-tight text-base/5">{product.desc}</p>
         <Link href={`/products/${product.id}`} className="btn">
           Shop for {product.title.toLowerCase()} <ArrowRight size={16} />
         </Link>

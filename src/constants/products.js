@@ -7,24 +7,37 @@ export const data = [
     subCategories: [
       {
         title: "Ultra Thin 290mm",
-        id: "premium-diapers",
+        id: "ultra-thin-290mm-sanitary-pads",
         price: [60, 100],
-        variants: [`6pc, ₹60`, '10pc, ₹100'],
-        desc: "Stay fresh and protected all day with TenderTouch Sanitary Pads made with ultra-soft, breathable material for comfort and high-absorbency layers for leak-free confidence. Designed to prevent rashes and discomfort, these pads give you the comfort whether you’re working, traveling, or relaxing.",
+        variants: [
+          { label: '6pc', originalPrice: 60, discountedPrice: 54 },
+          { label: '10pc', originalPrice: 100, discountedPrice: 90 }
+        ],
+        desc: "Stay fresh and protected all day with TenderTouch Sanitary Pads made with ultra-soft, breathable material for comfort and high-absorbency layers for leak-free confidence. Designed to prevent rashes and discomfort, these pads give you the comfort whether you are working, traveling, or relaxing.",
         tagline: "Stay fresh and protected all day",
         src: "/sanitary-pads.jpg",
         featured: true,
-        link: ['1', '2'],
+        links: [
+          'https://www.daraz.com.np/products/tender-touch-premium-sanitary-pads-ultra-thin-290mm-6-pads-i366493980-s1624487221.html',
+          'https://www.daraz.com.np/products/tender-touch-premium-sanitary-pads-ultra-thin-290mm-10-pads-i366512419.html'
+        ],
       },
       {
         title: "Ultra Thin 320mm",
-        id: "super-saver-pack",
+        id: "ultra-thin-320mm-sanitary-pads",
         price: [70, 110],
-        variants: ['6pc', '10pc'],
-        desc: "Stay fresh and protected all day with TenderTouch Sanitary Pads made with ultra-soft, breathable material for comfort and high-absorbency layers for leak-free confidence. Designed to prevent rashes and discomfort, these pads give you the comfort whether you’re working, traveling, or relaxing.",
+        variants: [
+          { label: '6pc', originalPrice: 70, discountedPrice: 63 },
+          { label: '10pc', originalPrice: 110, discountedPrice: 99 }
+        ],
+        desc: "Stay fresh and protected all day with TenderTouch Sanitary Pads made with ultra-soft, breathable material for comfort and high-absorbency layers for leak-free confidence. Designed to prevent rashes and discomfort, these pads give you the comfort whether you are working, traveling, or relaxing.",
+        tagline: "Stay fresh and protected all day",
         src: "/product-marketing.jpeg",
         featured: false,
-        link: ['1', '2'],
+        links: [
+          'https://www.daraz.com.np/products/tender-touch-premium-sanitary-pads-ultra-thin-290mm-6-pads-i366493980-s1624487221.html',
+          'https://www.daraz.com.np/products/tender-touch-premium-sanitary-pads-ultra-thin-290mm-10-pads-i366512419.html'
+        ],
       },
     ]
   },

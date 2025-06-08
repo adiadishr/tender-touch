@@ -30,7 +30,7 @@ export default function Home() {
     <FeaturedProducts />
     {/* Grid */}
     <div className="border-b border-neutral-200">
-      <div className="mx-auto w-[90%] pt-10 pb-20 md:pt-20 md:pb-10 relative z-10 text-cyan-950">
+      <div className="mx-auto w-[90%] pt-10 pb-20 md:pt-20 md:pb-10 relative z-10">
         <div className="mb-4 text-3xl tracking-tight text-center md:text-left">Our Collections</div>
         <div className="max-w-lg mx-auto mb-6 tracking-tight text-center text-base/6 md:text-left md:mx-0">We offer a complete range of hygiene and care products, designed to deliver comfort, protection, and care for your every need.</div>
         <div className="flex items-center justify-center w-full gap-4 md:justify-start">
@@ -44,8 +44,8 @@ export default function Home() {
     </div>
     {/* Testimonials */}
     <div className="w-[90%] mx-auto py-20 md:pt-40">
-      <div className="max-w-lg mx-auto mb-4 tracking-tight text-center text-5xl/16 md:text-7xl/20 text-cyan-950">210,000 5-Star Reviews Globally</div>
-      <div className="mb-8 tracking-tight text-center text-cyan-950">Parents are happier with Rascals</div>
+      <div className="max-w-lg mx-auto mb-4 tracking-tight text-center text-5xl/16 md:text-7xl/20">210,000 5-Star Reviews Globally</div>
+      <div className="mb-8 tracking-tight text-center">Parents are happier with Rascals</div>
       <div className="flex flex-wrap justify-center gap-4 mb-20">
         <div className="btn">All Reviews<ArrowRight size={16} /></div>
         <div className="btn !text-violet-600 !bg-transparent">Leave Your Own Review<ArrowRight size={16} /></div>
